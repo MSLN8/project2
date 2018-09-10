@@ -1,0 +1,14 @@
+<h2>My stones</h2>
+<a href="/stone/add">Add a stone</a>
+
+<ul>
+  {{#each stoneArray}}
+  <li>
+    <h3>{{this.stoneName}}</h3>
+    <img src="{{this.image}}"/>
+  </li>
+  {{else}}
+  <p> You don't have any stone yet</p>
+  <a href="/room/add">Add a stone</a>
+  {{/each}}
+</ul>

@@ -1,0 +1,35 @@
+<h2>My settings</h2>
+
+<form action="">
+<label>
+   Change your name:
+  <input type="text" name="name" value="{{currentUser.name}}" placeholder="My name"/>
+</label>
+<br/>
+
+ <label>
+    Email :
+    <input type="email" name="email" value="{{currentUser.email}}" placeholder = "Change your email here"/>
+  </label>
+  <br>
+
+  <label>
+    Password :
+    <input type="password" name="originalPassword" value="{{currentUser.originalPassword}}" placeholder = "Change your password here"/>
+  </label>
+  <br>
+
+  <label>
+    Zodiac Sign
+    <input type="zodiac-sign" name="zodiacSign" value="{{currentUser.zodiacSign}}" placeholder = "What's your Zodiac Sign ?"/>
+  </label>
+  <br>
+
+  <label>
+    Location
+    <input type="location" name="location" value="{{currentUser.location}}" placeholder = "Change your location here"/>
+  </label>
+  <br>
+
+<button>Save settings</button>
+</form>

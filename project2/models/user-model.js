@@ -7,10 +7,21 @@ const userSchema = new Schema ({
     zodiac: { type: String, enum: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces']},
     location: {type: String},
     possessions: {type: Number}, 
+
+    encryptedPassword: {type: String},
+    role: {
+    type: String,
+    enum: ["normal", "admin"],
+    required : true,
+    default: "normal",
+    },
 }, {
     timestamps : true
 });
 
+userSchema.virtual("isAdmin").get(function(){
+    return this.role ==="admin";
+    });
 
 const User = mongoose.model("User", userSchema);
 
