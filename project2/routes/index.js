@@ -8,6 +8,7 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+<<<<<<< HEAD
 router.get("/settings", (req,res,next) => {
   if (!req.user){
     req.flash("error", "You have to be logged to visit user settings! ")
@@ -35,3 +36,19 @@ router.post("/process-settings",(req,res,next) => {
 });
 
 module.exports = router;
+=======
+
+
+
+/*GET Stone Description page */
+router.get('/stone-description', (req, res, next)=>{
+  Stone.find()
+  .then(stoneResults => {
+    res.locals.stonesArray = stoneResults;
+  })
+  res.render("stone-description.hbs")
+});
+
+
+module.exports = router;
+>>>>>>> 79d55b175bded973e91a244ff174f32e8baeea4d
