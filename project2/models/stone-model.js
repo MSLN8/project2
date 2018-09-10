@@ -6,7 +6,6 @@ const stoneSchema = new Schema ({
     image : { type: String},
     power : {type:  String},
     forWho : {type: String},
-    connections : {type: String},
     reviews: [{
         user: {type: String, required: true},
         comments: {type: String}
