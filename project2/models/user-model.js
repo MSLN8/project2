@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+
+///////////SCHEMA CREATION FOR USER MODEL//////////////////////////////////////////////////////////
 const userSchema = new Schema ({
     fullName: {type: String,required : true },
     image: {type: String, default: "https://media.giphy.com/media/12uhzw7y9aB8v6/giphy.gif"},
@@ -19,10 +21,14 @@ const userSchema = new Schema ({
     timestamps : true
 });
 
+const User = mongoose.model("User", userSchema);
+
+
+///////////////////////////////////ADMIN VIEW//////////////////////////////////////////////////////////
 userSchema.virtual("isAdmin").get(function(){
     return this.role ==="admin";
     });
 
-const User = mongoose.model("User", userSchema);
+
 
 module.exports = User;

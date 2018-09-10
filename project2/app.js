@@ -8,6 +8,8 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const session      = require('express-session');
+const MongoStore   = require('connect-mongo')(session);
 
 
 mongoose
@@ -44,15 +46,24 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
+app.use(session({
+  // "secret" should be a string that's different for every app
+  secret: "secret should be different for every app",
+  // "saveUninitialzed" and "resave" are here just to avoir error messages
+  saveUninitialized: true,
+  resave:true,
+  // use "connect-mongo" to store session information inside MongoDB
+  store : new MongoStore({mongooseConnection:mongoose.connection})
+}));
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
 
-
-const index = require('./routes/index');
+const index = require("./routes/index.js");
 app.use('/', index);
 
+const authRouter= require("./routes/auth-router.js");
+app.use("/", authRouter);
 
 module.exports = app;

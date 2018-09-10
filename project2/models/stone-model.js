@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+///////////SCHEMA CREATION FOR STONE MODEL//////////////////////////////////////////////////////////
 const stoneSchema = new Schema ({
     name: {type: String,required : true },
     image : { type: String},
@@ -15,5 +16,9 @@ const stoneSchema = new Schema ({
 });
 
 const Stone = mongoose.model("Stone", stoneSchema);
+
+
+
+
 
 module.exports = Stone;

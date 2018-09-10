@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Stone = require("../models/stone-model.js");
 
+
+//////////////////Connection to Mongoose////////////////////////////
 mongoose
   .connect('mongodb://localhost/project2', {useNewUrlParser: true})
   .then(x => {
@@ -10,6 +12,8 @@ mongoose
     console.error('Error connecting to mongo', err)
   });
 
+
+//////////////////Data creation in Mongo////////////////////////////
   const stoneData = [
     {name: "Amethyst",
      image: "https://bit.ly/2MgKMCX",

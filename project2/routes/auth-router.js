@@ -4,32 +4,37 @@ const bcrypt = require('bcrypt');
 const User = require ('../models/user-model.js');
 const passport = require ("passport");
 
+
+
+
+///////////ROUTE SIGN UP/////////////////////////////////////////////////////////////////////
 router.get("/signup", (req,res,next) => {
 res.render("auth-views/signup-form.hbs");
 });
 
 router.post("/process-signup", (req,res,next) => {
-const {email, originalPassword, zodiacSign, location} = req.body;
+  const {name, email, originalPassword, zodiacSign, location} = req.body;
+  //Encrypt the submitted password
+  const encryptedPassword= bcrypt.hashSync(originalPassword, 10);
 
-//encrypt the submitted password
-const encryptedPassword= bcrypt.hashSync(originalPassword, 10);
-
-User.create ({fullName, email, encryptedPassword})
-.then(userDoc => {
-  req.flash("error", "Incorrect email");
-  res.redirect("/");
-  })
-.catch(err => next(err));
+  User.create ({name, email, encryptedPassword, zodiacSign, location})
+  .then(userDoc => {
+    req.flash("error", "Incorrect email");
+    res.redirect("/");
+    })
+  .catch(err => next(err));
 });
 
+
+///////////ROUTE LOG IN/////////////////////////////////////////////////////////////////////
 router.get("/login", (req,res,next)=> {
   res.render("auth-views/login-form.hbs")
 });
 
 router.post("/process-login", (req, res, next) => {
   const {email, originalPassword} = req.body;
-  
-  // fist check to see if there's a document with that email
+
+  // Fist check to see if there's a document with that email
   User.findOne({email : {$eq:email}})
   .then(userDoc => {
     if (!userDoc){
