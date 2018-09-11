@@ -1,7 +1,9 @@
+{{>flash_messages}}
+
 <h2>COUCOU</h2>
 
 {{#if currentUser}}
-<h3>Welcome back, {{currentUser.name}}</h3>
+<h3>Welcome back, {{currentUser.fullName}}</h3>
 {{else}}
 <p> Welcome to our website, create your account !</p>
 <a href="/signup">Sign Up Here</a>

@@ -9,16 +9,12 @@ const stoneSchema = new Schema ({
     forWho : {type: String},
     reviews: [{
         user: {type: String, required: true},
-        comments: {type: String}
+        comments: {type: String, required : true}
     }]
 }, {
     timestamps : true
 });
 
 const Stone = mongoose.model("Stone", stoneSchema);
-
-
-
-
 
 module.exports = Stone;

@@ -10,7 +10,9 @@ const logger       = require('morgan');
 const path         = require('path');
 const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
+const flash        = require('connect-flash');
 
+const passportSetup = require('./config/passport/passport-setup.js')
 
 mongoose
   .connect('mongodb://localhost/project2', {useNewUrlParser: true})
@@ -40,23 +42,29 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
       
-
+hbs.registerPartials(__dirname+ "/views/partials");
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(session({
-  // "secret" should be a string that's different for every app
   secret: "secret should be different for every app",
-  // "saveUninitialzed" and "resave" are here just to avoir error messages
   saveUninitialized: true,
   resave:true,
-  // use "connect-mongo" to store session information inside MongoDB
   store : new MongoStore({mongooseConnection:mongoose.connection})
 }));
 
-// default value for title local
+passportSetup(app); 
+
+app.use(flash());
+app.use((req,res,next) => {
+  //makes flash messages accesible inside hbs files as "messages"
+  res.locals.messages = req.flash();
+  next();
+});
+
+
 app.locals.title = 'Our Beautiful Stone Website';
 
 
@@ -65,5 +73,7 @@ app.use('/', index);
 
 const authRouter= require("./routes/auth-router.js");
 app.use("/", authRouter);
+
+const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 
 module.exports = app;
