@@ -9,7 +9,7 @@ const passport = require ("passport");
 
 ///////////ROUTE SIGN UP/////////////////////////////////////////////////////////////////////
 router.get("/signup", (req,res,next) => {
-res.render("auth-views/signup-form.hbs");
+res.render("./auth-views/signup-form.hbs");
 });
 
 router.post("/process-signup", (req,res,next) => {
@@ -28,7 +28,7 @@ router.post("/process-signup", (req,res,next) => {
 
 ///////////ROUTE LOG IN/////////////////////////////////////////////////////////////////////
 router.get("/login", (req,res,next)=> {
-  res.render("auth-views/login-form.hbs")
+  res.render("./auth-views/login-form.hbs")
 });
 
 router.post("/process-login", (req, res, next) => {
@@ -40,7 +40,7 @@ router.post("/process-login", (req, res, next) => {
     if (!userDoc){
       // save a flash message to display in the LOGIN page
       req.flash("error", "Incorrect email");
-      res.redirect("/login");
+      res.redirect("./login");
       return; // use "return instead of a big else {}"
     }
 
@@ -50,7 +50,7 @@ router.post("/process-login", (req, res, next) => {
       // "compareSync()" will return false if the "originalPassword" is wrong
       if (!bcrypt.compareSync(originalPassword, encryptedPassword)) {
         req.flash("error", "Incorrect password");
-        res.redirect("/login");
+        res.redirect("./login");
         return;
       }
 
