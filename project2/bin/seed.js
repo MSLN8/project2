@@ -18,9 +18,29 @@ mongoose
     {name: "Amethyst",
      image: "https://bit.ly/2MgKMCX",
      power: "Purifying the mind and clearing it of negative thoughts",
-     forWho: "Zodiac stone for pisces",
-     
+     forWho: "Sagittarius, Capricorn, Virgo, Aquarius, Pisces",
     },
+    {name: " Clear quartz",
+    image: "https://bit.ly/2Mk0Rrx",
+    power: "Regulates emotions, detangles the energy nodes ",
+    forWho: "Gemini, Cancer, Virgo, Capricorn, Aquarius, Pisces",
+   },
+    {name: "Citrine",
+    image: "https://bit.ly/2x2vNXx",
+    power: " Improves creativity, reduces anxiety and stress",
+    forWho: "Zodiac stone for pisces",
+  },
+    {name: "Black Tourmaline",
+    image: "https://bit.ly/2wZcJta",
+    power: "Brings stability, restores self-confidence, drives out unwanted thoughts",
+    forWho: "Cancer, Sagittarius, Capricorn",
+ },
+    {name: "Carnelian",
+    image: "https://bit.ly/2N5GHqv",
+    power: "Brings dynamism. Fights sadness and gloom",
+    forWho: "Aries, Taurus, Virgo, Scorpio",
+},
+  
   ]
 
 Stone.create(stoneData)
