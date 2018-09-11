@@ -10,6 +10,10 @@
   "dependencies": {
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
+<<<<<<< HEAD
+    "connect-flash": "^0.1.1",
+=======
+>>>>>>> bd1cfdb977867bd29c4ea41d4d63b1850efcfc3b
     "connect-mongo": "^2.0.1",
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.0.0",
