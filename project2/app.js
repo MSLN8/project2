@@ -57,7 +57,7 @@ app.use(session({
 }));
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Our Beautiful Stone Website';
 
 
 const index = require("./routes/index.js");
