@@ -65,7 +65,7 @@ app.use((req,res,next) => {
 });
 
 
-app.locals.title = 'Our Beautiful Stone Website';
+app.locals.title = 'GET STONED';
 
 
 const index = require("./routes/index.js");
