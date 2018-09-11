@@ -13,17 +13,19 @@ res.render("./auth-views/signup-form.hbs");
 });
 
 router.post("/process-signup", (req,res,next) => {
-  const {name, email, originalPassword, zodiacSign, location} = req.body;
+  const {fullName, email, originalPassword, zodiac, location} = req.body;
   //Encrypt the submitted password
   const encryptedPassword= bcrypt.hashSync(originalPassword, 10);
 
-  User.create ({name, email, encryptedPassword, zodiacSign, location})
+  User.create ({fullName, email, encryptedPassword, zodiac, location})
   .then(userDoc => {
-    req.flash("error", "Incorrect email");
+    //req.flash("success", "Sign up success! 🖖🏾");
     res.redirect("/");
     })
   .catch(err => next(err));
 });
+
+
 
 
 ///////////ROUTE LOG IN/////////////////////////////////////////////////////////////////////
@@ -40,7 +42,7 @@ router.post("/process-login", (req, res, next) => {
     if (!userDoc){
       // save a flash message to display in the LOGIN page
       req.flash("error", "Incorrect email");
-      res.redirect("./login");
+      res.redirect("./login-form");
       return; // use "return instead of a big else {}"
     }
 

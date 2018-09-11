@@ -1,10 +1,14 @@
 <h1>Stone description</h1>
 
-{{#each stonesArray}}
-<h2>{{this.name}}</h2>
-<img src="{{this.image}}" alt="">
+
+
 <ul>
+    {{#each stonesArray }}
+    <li>
+    <h2>{{this.name}}</h2>
+    <img src="{{this.image}}" alt="">
+    </li>
     <li>{{this.power}}</li>
     <li>{{this.forWho}}</li>
+    {{/each}}
 </ul>
-{{/each}}

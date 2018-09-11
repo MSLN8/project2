@@ -13,9 +13,12 @@ router.get('/stone-description', (req, res, next)=>{
   Stone.find()
   .then(stoneResults => {
     res.locals.stonesArray = stoneResults;
-  })
   res.render("stone-description.hbs")
+})
+.catch(err => next(err))
 });
+
+
 
 /////////ROUTE SETTINGS///////////////////////////////////////////////////////////////////
 // router.get("/settings",(req,res,next) => {
