@@ -1,14 +1,6 @@
-<h1>Stone description</h1>
+<h1>{{oneStone.name}}</h1>
 
+<img src="{{oneStone.image}}" alt=""/>
 
-
-<ul>
-    {{#each stonesArray }}
-    <li>
-    <h2>{{this.name}}</h2>
-    <img src="{{this.image}}" alt="">
-    </li>
-    <li>{{this.power}}</li>
-    <li>{{this.forWho}}</li>
-    {{/each}}
-</ul>
+<p>{{oneStone.power}}</p>
+<p>{{oneStone.forWho}}</p>

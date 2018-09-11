@@ -8,15 +8,26 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-//////////////ROUTE STONE DESCRIPTION PAGE ///////////////////////////////////////////////////////
-router.get('/stone-description', (req, res, next)=>{
+//////////////ROUTE STONE LIST///////////////////////////////////////////////////////
+router.get('/stone-list', (req, res, next)=>{
   Stone.find()
   .then(stoneResults => {
     res.locals.stonesArray = stoneResults;
-  res.render("stone-description.hbs")
+  res.render("stone-list.hbs")
 })
 .catch(err => next(err))
 });
+
+//////////////ROUTE GET STONE INFO ///////////////////////////////////////////////////////
+router.get('/stone-description/:stoneId', (req, res, next) => {
+  const {stoneId} = req.params
+  Stone.findById(stoneId)
+  .then( stoneDoc => {
+    res.locals.oneStone = stoneDoc
+    res.render("stone-description")
+  })
+  .catch(err => next(err));
+})
 
 
 
