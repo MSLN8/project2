@@ -9,7 +9,7 @@ const passport = require ("passport");
 
 ///////////ROUTE SIGN UP/////////////////////////////////////////////////////////////////////
 router.get("/signup", (req,res,next) => {
-res.render("auth-views/signup-form.hbs");
+res.render("./auth-views/signup-form.hbs");
 });
 
 router.post("/process-signup", (req,res,next) => {
@@ -28,7 +28,7 @@ router.post("/process-signup", (req,res,next) => {
 
 ///////////ROUTE LOG IN/////////////////////////////////////////////////////////////////////
 router.get("/login", (req,res,next)=> {
-  res.render("auth-views/login-form.hbs")
+  res.render("./auth-views/login-form.hbs")
 });
 
 router.post("/process-login", (req, res, next) => {

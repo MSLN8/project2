@@ -15,7 +15,7 @@ router.get("/admin/users", (req,res,next) =>{
     .sort({role:1, createdAt: 1}) // use".sort()"" to order results
     .then(userResults => {
       res.locals.userArray = userResults;
-      res.render("admin-views/user-list.hbs");
+      res.render("./admin-views/user-list.hbs");
     })
     .catch(err=>next(err));
 });
