@@ -12,15 +12,19 @@ res.render("./auth-views/signup-form.hbs");
 
 router.post("/process-signup", (req,res,next) => {
   const {fullName, email, originalPassword, zodiac, location} = req.body;
+  //Encrypt the submitted password
   const encryptedPassword= bcrypt.hashSync(originalPassword, 10);
 
   User.create ({fullName, email, encryptedPassword, zodiac, location})
   .then(userDoc => {
     req.flash("success", "Sign up success !");
+    //req.flash("success", "Sign up success! 🖖🏾");
     res.redirect("/");
     })
   .catch(err => next(err));
 });
+
+
 
 
 ///////////ROUTE LOG IN/////////////////////////////////////////////////////////////////////
@@ -36,6 +40,8 @@ router.post("/process-login", (req, res, next) => {
       req.flash("error", "Incorrect email");
       res.redirect("./auth-views/login-form.hbs");
       return;
+      res.redirect("./login-form");
+      return; // use "return instead of a big else {}"
     }
       const {encryptedPassword} = userDoc;
       if (!bcrypt.compareSync(originalPassword, encryptedPassword)) {

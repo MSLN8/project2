@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 a {
@@ -17,3 +18,22 @@ a {
 
 .error-message {
   color: crimson; }
+nav a{
+  font-size: 16px;
+  color: blueviolet;
+  text-decoration: none;
+  padding-right: 2%;
+}
+
+
+header{
+    
+  background-color: rgb(228, 222, 222);;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

@@ -75,5 +75,7 @@ const authRouter= require("./routes/auth-router.js");
 app.use("/", authRouter);
 
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+const adminRouter = require("./routes/admin-router.js")
+app.use("/", adminRouter);
 
 module.exports = app;
