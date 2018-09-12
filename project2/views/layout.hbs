@@ -11,19 +11,28 @@
   <header>
     <nav>
       <a href="/">Home</a>
-      <a href="/login">Log In</a>
-      <a href="/logout">Log Out</a>
-      <a href="/signup">Sign Up</a>
-      <a href="/stone-list">Check our Stones</a>
-      <a href="/journal">My Journal</a>
+      {{#if currentUser}}
+      <b>{{currentUser.email}}</b>
+      <a href="/profile">My profile</a>
+      <a href="/logout">Log out</a>
+       {{#if currentUser.isAdmin}}
+      <h3>Admin zone</h3>
+      <a href="/admin/users">User management</a>
+       <a href="/admin/users">Stone management</a>
+      {{/if}}
+      {{else}}
+      <a href="/signup">Sign up</a>
+      <a href="/login">Log in</a>
+      {{/if}}
     </nav>
   </header>
  {{!-- <h1>Welcome to {{title}} website</h1> --}}
   {{{body}}}
-
+  <a href="/stone-list">Check our Stones</a>
 
 
 <footer> Made by Julie & Manon at IronHack </footer>
 <script src="/javascripts/script.js"></script>
 </body>
 </html>
+

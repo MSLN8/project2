@@ -1,13 +1,50 @@
 <h2>My profile</h2>
-
 <ul>
-  {{#each stoneArray}}
-  <li>
-    <h3>{{this.stoneName}}</h3>
-    <img src="{{this.image}}"/>
-  </li>
-  {{else}}
-  <p> You don't have any stone yet</p>
-  <a href="/room/add">Add a stone</a>
-  {{/each}}
+<li>{{currentUser.email}}</li>
+<li>{{currentUser.fullName}}</>
+<img src="{{currentUser.image}}" alt="">
+<li>{{currentUser.zodiac}}</li>
+<li>{{currentUser.location}}</li>
+<li>{{currentUser.possessions}}</li>
+<li>{{currentUser.timestamps}}</li>
 </ul>
+
+
+<h3>My stone collection</h3>
+
+<div class="form-popup" id="myForm">
+  <form action="/settings-page.hbs" class="form-container">
+<label>
+   Change your name:
+  <input type="text" name="fullName" value="{{currentUser.fullName}}" placeholder="Change your name here"/>
+</label>
+<br/>
+
+ <label>
+    Email :
+    <input type="email" name="email" value="{{currentUser.email}}" placeholder = "Change your email here"/>
+  </label>
+  <br>
+
+  <label>
+    Password :
+    <input type="password" name="originalPassword" value="{{currentUser.originalPassword}}" placeholder = "Change your password here"/>
+  </label>
+  <br>
+
+  <label>
+    Zodiac Sign
+    <input type="zodiac-sign" name="zodiac" value="{{currentUser.zodiac}}" placeholder = "Change your Zodiac Sign here"/>
+  </label>
+  <br>
+
+  <label>
+    Location
+    <input type="location" name="location" value="{{currentUser.location}}" placeholder = "Change your location here"/>
+  </label>
+  <br>
+
+<button>Save settings</button>
+</form>
+</div>
+
