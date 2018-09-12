@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Stone = require("../models/stone-model.js")
+const User = require ("../models/user-model.js");
+
+///////ROUTE PROFILE////////////////////////////////////////////////////////////////////////////////
 
 router.get("/profile", (req,res,next) => {
     if (!req.user){
@@ -11,37 +14,20 @@ router.get("/profile", (req,res,next) => {
         res.render("../views/profile-page.hbs")
     }
 })
-   
-/////////////MY STONES PART///////////////////////////////////////////////////////////////
-//     Stone.find({ owner : {$eq: req.user._id} })
-//     .sort({createdAt : -1})
-//     .then(stoneResults => {
-//       res.locals.stonesArray = stoneResults;
-//       res.render("views/profile-page.hbs");
-//     })
-//     .catch(err => next(err));
-// });
 
-// router.get("/profile/add", (req,res,next) => {
-//     if(!req.user){
-//         req.flash("error", "You must be logged in to add a stone")
-//         res.redirect("/login");
-//     }
-//     else {
-//     res.render("views/stone-form.hbs");
-//     }
-// });
-
-// router.post("/process-stone", (req,res,next) => {
-//   const {name, description, pictureUrl} = req.body;
-//   const owner = req.user._id;
-
-// Stone.create({name, description, image})
-//   .then(stoneDoc => {
-//     req.flash("success", "Stone created successfully")
-//     res.redirect("/my-profile")
-//   })
-//   .catch(err => next (err));
-// });
+router.post("/process-profile",(req,res,next) => { 
+    const {fullName, email, location} = req.body;
+    User.findByIdAndUpdate(
+      req.user._id, //get the logged user's ID using Passport's "req.user"
+    { $set: {fullName, email, location} },
+    {runValidators:true},
+    )
+    .then (userDoc => {
+      req.flash("success", "settings saved!");
+      res.redirect("/");
+    })
+    .catch (err => next(err));
+  });
+  
 
 module.exports = router;

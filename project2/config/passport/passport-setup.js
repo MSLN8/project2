@@ -1,7 +1,6 @@
 const passport = require ("passport");
 const User = require ("../../models/user-model");
 
-
 require("./google-strategy.js");
 passport.serializeUser((userDoc, done) => {
   done(null,userDoc._id);

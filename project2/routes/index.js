@@ -32,30 +32,30 @@ router.get('/stone-description/:stoneId', (req, res, next) => {
 
 
 /////////ROUTE SETTINGS///////////////////////////////////////////////////////////////////
-// router.get("/settings",(req,res,next) => {
-//   if (!req.user){
-//     req.flash("error", "You have to be logged to visit user settings!")
-//     res.redirect('/login');
-//   }
-//   else {
-//     res.render("settings-page.hbs");
-//   }
-// });
-// router.post("/process-settings",(req,res,next) => { 
-//   const {fullName, email} = req.body;
+router.get("/settings",(req,res,next) => {
+  if (!req.user){
+    req.flash("error", "You have to be logged to visit user settings!")
+    res.redirect('/login');
+  }
+  else {
+    res.render("profile-page.hbs");
+  }
+});
+router.post("/process-settings",(req,res,next) => { 
+  const {fullName, email} = req.body;
 
-//   User.findByIdAndUpdate(
-//     req.user._id, //get the logged user's ID using Passport's "req.user"
-//   { $set: {fullname, email} },
-//   {runValidators:true},
-//   )
+  User.findByIdAndUpdate(
+    req.user._id, //get the logged user's ID using Passport's "req.user"
+  { $set: {fullname, email} },
+  {runValidators:true},
+  )
 
-//   .then (userDoc => {
-//     req.flash("success", "settings saved!");
-//     res.redirect("/");
-//   })
-//   .catch (err => next(err));
-// });
+  .then (userDoc => {
+    req.flash("success", "settings saved!");
+    res.redirect("/");
+  })
+  .catch (err => next(err));
+});
 
 
 

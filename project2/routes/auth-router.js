@@ -82,7 +82,5 @@ router.post("/process-login", (req, res, next) => {
     failureFlash: "Google log in failed !",
     }));
 
-    // const app = express();
-    // app.use(flash());
 
 module.exports = router;

@@ -1,3 +1,5 @@
+
+
 <h2>My profile</h2>
 <ul>
 <li>{{currentUser.email}}</li>
@@ -12,8 +14,12 @@
 
 <h3>My stone collection</h3>
 
+
+
+{{!-- Settings --}}
+<button class="open-button" onclick="openForm()">Edit your profile</button>
 <div class="form-popup" id="myForm">
-  <form action="/settings-page.hbs" class="form-container">
+<form action="/process-profile" class="form-container" method="POST">
 <label>
    Change your name:
   <input type="text" name="fullName" value="{{currentUser.fullName}}" placeholder="Change your name here"/>
@@ -26,17 +32,11 @@
   </label>
   <br>
 
-  <label>
-    Password :
-    <input type="password" name="originalPassword" value="{{currentUser.originalPassword}}" placeholder = "Change your password here"/>
-  </label>
-  <br>
-
-  <label>
+  {{!-- <label>
     Zodiac Sign
     <input type="zodiac-sign" name="zodiac" value="{{currentUser.zodiac}}" placeholder = "Change your Zodiac Sign here"/>
   </label>
-  <br>
+  <br> --}}
 
   <label>
     Location
@@ -44,7 +44,17 @@
   </label>
   <br>
 
-<button>Save settings</button>
+<button type="submit" class="btn">Save</button>
+<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 </form>
 </div>
 
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+</script>
