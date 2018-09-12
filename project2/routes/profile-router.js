@@ -32,7 +32,9 @@ router.post("/stone-list", (req,res,next) =>{
         { $push: { possession: stoneId }}
     )
     .then( userDoc => {
-        res.render("stone-list.hbs");
+        //stone.find()
+        //res.locals.stonesArray = userDoc;
+        res.redirect("stone-list");
     })
     .catch(err => next(err));
 });
