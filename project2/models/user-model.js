@@ -9,7 +9,7 @@ const userSchema = new Schema ({
     image: {type: String, default: "https://media.giphy.com/media/12uhzw7y9aB8v6/giphy.gif"},
     zodiac: { type: String, enum: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces']},
     location: {type: String},
-    possessions: {type: Number}, 
+    possessions: {type: Schema.Types.ObjectId}, 
     googleID: String,
 
     encryptedPassword: {type: String},

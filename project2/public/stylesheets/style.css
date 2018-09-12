@@ -4,6 +4,20 @@ body {
   margin: 0;
   background-color: beige; }
 
+a {
+  color: #00B7FF; }
+
+[class$="-message"] {
+  border: 3px solid;
+  border-radius: 3px;
+  padding: 10px; }
+
+.success-message {
+  color: chartreuse; }
+
+.error-message {
+  color: crimson; }
+
 nav a {
   font-size: 16px;
   color: gray;
@@ -20,8 +34,7 @@ header {
   left: 0;
   width: 100%;
   /* text-align: center; */
-  display: inline; 
-}
+  display: inline; }
 
 nav {
   padding: 1% 2%; }
@@ -51,23 +64,42 @@ li {
   background-position: center;
   background-size: cover; }
 
-nav {
-  padding: 1% 2%; }
+.description-container {
+  border: 2px solid grey;
+  width: 700px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-content: space-between; }
 
-#searchbar {position:relative; width:1040px; height:auto; background-color: goldenrod}
-.formulaire {display:inline-block;}
-.formulaire .champ {width:300px; height:35px;}
-.formulaire .bouton { background-image: url(images/searchbar_button.png);background-repeat: no-repeat;width: 35px;height: 35px;padding: 0; border-radius :5px; }
+.stone-description-title {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  padding: 5%;
+  color: grey;
+  background-position: center;
+  background-size: cover; }
 
- .bouton {
-  border-radius: 20px;
- }
+.stone-description-img {
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  top: 19%;
+  margin-top: -50px;
+  padding: 0px 3px; }
 
- .content{
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 700px;
-  padding: 50% 37%;
-  width: 100%;
+.description-img-container {
+  border: 3px solid red;
+  position: relative; }
+
+.description-info-container {
+  border: 3px solid green;
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  top: 19%;
+  margin-top: -50px;
+  padding: 10px 3px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -76,3 +76,47 @@ li{
   background-position: center;
   background-size: cover;
 }
+
+.description-container{
+  border: 2px solid grey;
+  width:700px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-content: space-between;
+
+}
+
+.stone-description-title{
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  padding: 5%;
+  color: grey;
+  background-position: center;
+  background-size: cover;
+}
+
+.stone-description-img{
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  top: 19%;
+  margin-top: -50px;
+  padding: 0px 3px;
+}
+
+.description-img-container{
+  border: 3px solid red;
+  position: relative;
+}
+
+.description-info-container{
+  border: 3px solid green;
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  top: 19%;
+  margin-top: -50px;
+  padding: 10px 3px;
+}

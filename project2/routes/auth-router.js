@@ -29,7 +29,7 @@ router.post("/process-signup", (req,res,next) => {
 
 ///////////ROUTE LOG IN/////////////////////////////////////////////////////////////////////
 router.get("/login", (req,res,next)=> {
-  res.render("./auth-views/login-form.hbs")
+  res.render("./auth-views/login-form")
 });
 
 router.post("/process-login", (req, res, next) => {

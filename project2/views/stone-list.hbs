@@ -7,6 +7,9 @@
     <a href="stone-description/{{this._id}}"> 
         <img class="stone-img" src="{{this.image}}" alt=""/>
     </a>
+    <form action="/stone-list" method="GET">
+    <button>Add this stone</button>
+    </form>
     </li>
     {{/each}}
 </ul>
