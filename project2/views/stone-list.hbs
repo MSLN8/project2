@@ -8,15 +8,18 @@
 
             <img class="stone-img" src="{{this.image}}" alt=""/>
 
+<div class = "bouton-container">
 
             <form action="stone-description/{{this._id}}" method="">
-                <button>See description</button>
+                <button>Description</button>
             </form>
 
             <form action="/stone-list" method="POST">
                 <input type="hidden" name="stoneId" value="{{this._id}}">
-                <button>Add this stone</button>
+                <button>Add to journal</button>
             </form>
+                
+</div>
 
 
         </li>
