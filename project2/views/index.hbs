@@ -9,7 +9,7 @@
 <div id="searchbar">  
     <h3>Search for a stone</h3>
     <form action="/search" class="formulaire" method="POST">
-    <input class="champ" type="text" name="field" minlength=1 placeholder="Amethyst..."/>
+    <input class="champ" type="text" name="field" placeholder="Amethyst..."/>
     <br/>
     <button class="bouton" type="submit">Search</button>             
     </form>
@@ -22,10 +22,13 @@
 
 
 {{else}}
+<div class ="homepagelogoff">
 <p> Welcome to our website, create your account !</p>
 <a href="/signup">Sign Up Here</a>
 {{/if}}
-
-</div>
+<br>
 <button class="bouton"> SEE THE FULL LIST </button>
+</div>
+</div>
+
 </div>

@@ -21,7 +21,6 @@ body {
 .error-message {
   color: crimson; }
 
-<<<<<<< HEAD
   /* LAYOUT ------------------------------------------------------------------------- */
 a {
   color: #00B7FF;
@@ -32,7 +31,6 @@ nav a{
   text-decoration: none;
   padding-right: 2%;
 }
-=======
   
   header{
     background-color: #e4dede;
@@ -46,18 +44,15 @@ nav a{
     /* text-align: center; */
     display: inline;
   }
->>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
 
   nav{
     padding: 1% 2%;
   }
 
-<<<<<<< HEAD
 nav{
   padding: 1% 2%;
 }
 /* STONE LIST ----------------------------------------------------------------- */
-=======
   nav a{
     font-size: 16px;
     color: gray;
@@ -80,7 +75,6 @@ nav{
   footer p{
     padding: 2%;
   }
->>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
 
 .stone-img{
   width: 200px;
@@ -113,7 +107,6 @@ li{
   background-size: cover;
   margin: 2% 5%;
 }
-<<<<<<< HEAD
   /* Settings Pop-Up --------------------------------------------------------------------------------- */
 * {box-sizing: border-box;}
 
@@ -185,7 +178,6 @@ li{
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-=======
 
 .description-container{
   border: 2px solid rgb(218, 198, 230);
@@ -234,4 +226,24 @@ li{
   color: gray;
   
 }
->>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
+
+// HOME PAGE LOGGED IN
+.content {
+  border : black, solid, 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+
+//HOME PAGE NOT LOGGED IN
+
+.homepagelogoff {
+  border : black, solid, 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+//ADMIN CSS
