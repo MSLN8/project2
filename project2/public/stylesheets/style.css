@@ -16,7 +16,6 @@ body {
 .error-message {
   color: crimson; }
 
-<<<<<<< HEAD
 /* LAYOUT ------------------------------------------------------------------------- */
 a {
   color: #00B7FF; }
@@ -27,8 +26,6 @@ nav a {
   text-decoration: none;
   padding-right: 2%; }
 
-=======
->>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
 header {
   background-color: #e4dede;
   height: 50px;
@@ -44,9 +41,10 @@ header {
 nav {
   padding: 1% 2%; }
 
-<<<<<<< HEAD
+nav {
+  padding: 1% 2%; }
+
 /* STONE LIST ----------------------------------------------------------------- */
-=======
 nav a {
   font-size: 16px;
   color: gray;
@@ -67,11 +65,11 @@ footer {
 footer p {
   padding: 2%; }
 
->>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
 .stone-img {
   width: 200px;
   height: 200px;
-  border: 5px solid #464646; }
+  border: 5px solid #464646;
+  margin: 0 31px; }
 
 .stone-container {
   display: flex;
@@ -95,25 +93,6 @@ li {
   background-size: cover;
   margin: 2% 5%; }
 
-.description-container {
-  border: 2px solid #dac6e6;
-  width: 700px;
-  height: 300px;
-  margin: 120px auto;
-  display: flex;
-  align-content: space-between;
-  background-color: rgba(250, 250, 250, 0.5); }
-
-.stone-description-title {
-  text-align: center;
-  font-size: 30px;
-  margin: 0;
-  padding: 5%;
-  color: grey;
-  background-position: center;
-  background-size: cover; }
-
-<<<<<<< HEAD
 /* Settings Pop-Up --------------------------------------------------------------------------------- */
 * {
   box-sizing: border-box; }
@@ -177,10 +156,28 @@ li {
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1; }
-=======
+
+.description-container {
+  border: 2px solid #dac6e6;
+  width: 700px;
+  height: 300px;
+  margin: 120px auto;
+  display: flex;
+  align-content: space-between;
+  background-color: rgba(250, 250, 250, 0.5); }
+
+.stone-description-title {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  padding: 5%;
+  color: grey;
+  background-position: center;
+  background-size: cover; }
+
 .stone-description-img {
   width: 300px;
-  height: 300px;
+  height: 295px;
   position: absolute; }
 
 .description-img-container {
@@ -196,6 +193,21 @@ li {
   margin-left: 48%;
   font-size: 16px;
   color: gray; }
->>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
+
+button {
+  background-color: plum;
+  padding: 6px 0 6px 0;
+  font: bold 13px Arial;
+  color: #555;
+  border-radius: 2px;
+  width: 91px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 3px #999;
+  margin: 0 2px; }
+
+.bouton-container {
+  display: flex;
+  /* align-content: start; */
+  margin-left: 13%; }
 
 /*# sourceMappingURL=style.css.map */
