@@ -18,12 +18,6 @@ a {
 .error-message {
   color: crimson; }
 
-nav a {
-  font-size: 16px;
-  color: gray;
-  text-decoration: none;
-  padding-right: 2%; }
-
 header {
   background-color: #e4dede;
   height: 50px;
@@ -39,6 +33,26 @@ header {
 nav {
   padding: 1% 2%; }
 
+nav a {
+  font-size: 16px;
+  color: gray;
+  text-decoration: none;
+  padding-right: 2%; }
+
+footer {
+  background-color: #e4dede;
+  font-size: 14px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+
+footer p {
+  padding: 2%; }
+
 .stone-img {
   width: 200px;
   height: 200px;
@@ -46,7 +60,8 @@ nav {
 
 .stone-container {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 0 2.8%; }
 
 .stone-name {
   text-align: center; }
@@ -62,15 +77,17 @@ li {
   padding: 5%;
   color: white;
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+  margin: 2% 5%; }
 
 .description-container {
-  border: 2px solid grey;
+  border: 2px solid #dac6e6;
   width: 700px;
   height: 300px;
-  margin: 0 auto;
+  margin: 120px auto;
   display: flex;
-  align-content: space-between; }
+  align-content: space-between;
+  background-color: rgba(250, 250, 250, 0.5); }
 
 .stone-description-title {
   text-align: center;
@@ -82,24 +99,22 @@ li {
   background-size: cover; }
 
 .stone-description-img {
-  width: 280px;
-  height: 280px;
-  position: absolute;
-  top: 19%;
-  margin-top: -50px;
-  padding: 0px 3px; }
+  width: 300px;
+  height: 300px;
+  position: absolute; }
 
 .description-img-container {
-  border: 3px solid red;
   position: relative; }
 
 .description-info-container {
-  border: 3px solid green;
-  width: 280px;
+  width: 332px;
   height: 280px;
-  position: absolute;
-  top: 19%;
+  position: relative;
+  top: 25%;
   margin-top: -50px;
-  padding: 10px 3px; }
+  padding: 10px 3px;
+  margin-left: 48%;
+  font-size: 16px;
+  color: gray; }
 
 /*# sourceMappingURL=style.css.map */
