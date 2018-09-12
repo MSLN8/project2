@@ -5,12 +5,20 @@
 <img src="{{currentUser.image}}" alt="">
 <li>{{currentUser.zodiac}}</li>
 <li>{{currentUser.location}}</li>
-<li>{{currentUser.possessions}}</li>
 <li>{{currentUser.timestamps}}</li>
 </ul>
 
 
 <h3>My stone collection</h3>
+<ul>
+  {{#each possessionArray}}
+    <li>
+      <img src="{{this.image}}" alt="">
+      <p>{{this.name}}</p>
+    </li>
+  {{/each}}
+</ul>
+
 
 <div class="form-popup" id="myForm">
   <form action="/settings-page.hbs" class="form-container">

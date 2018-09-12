@@ -2,14 +2,15 @@
 
 <ul class= "stone-container">
     {{#each stonesArray }}
-    <li>
-    <h2 class="stone-name">{{this.name}}</h2>
-    <a href="stone-description/{{this._id}}"> 
-        <img class="stone-img" src="{{this.image}}" alt=""/>
-    </a>
-    <form action="/stone-list" method="GET">
-    <button>Add this stone</button>
-    </form>
-    </li>
+        <li>
+        <h2 class="stone-name">{{this.name}}</h2>
+        <a href="stone-description/{{this._id}}"> 
+            <img class="stone-img" src="{{this.image}}" alt=""/>
+        </a>
+        <form action="/stone-list" method="POST">
+            <input type="hidden" name="stoneId" value="{{this._id}}">
+            <button>Add this stone</button>
+        </form>
+        </li>
     {{/each}}
 </ul>
