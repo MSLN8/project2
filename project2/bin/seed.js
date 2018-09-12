@@ -40,6 +40,11 @@ mongoose
     power: "Brings dynamism. Fights sadness and gloom",
     forWho: "Aries, Taurus, Virgo, Scorpio",
 },
+{name: "Aquamarine",
+image: "https://bit.ly/2MkF8Q8",
+power: "Attenuates nervousness and promotes psychic balance",
+forWho: "Aquarius, Pisces, Libra, Gemini",
+},
   
   ]
 
