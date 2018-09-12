@@ -7,15 +7,16 @@ const passport = require("passport");
 
 ///////////ROUTE SIGN UP/////////////////////////////////////////////////////////////////////
 router.get("/signup", (req,res,next) => {
-res.render("./auth-views/signup-form.hbs");
+  res.render("./auth-views/signup-form.hbs");
 });
 
 router.post("/process-signup", (req,res,next) => {
   const {fullName, email, originalPassword, zodiac, location} = req.body;
+  let possession = [];
   //Encrypt the submitted password
   const encryptedPassword= bcrypt.hashSync(originalPassword, 10);
 
-  User.create ({fullName, email, encryptedPassword, zodiac, location})
+  User.create ({fullName, email, encryptedPassword, possession, zodiac, location})
   .then(userDoc => {
     req.flash("success", "Sign up success !");
     //req.flash("success", "Sign up success! 🖖🏾");
@@ -29,7 +30,7 @@ router.post("/process-signup", (req,res,next) => {
 
 ///////////ROUTE LOG IN/////////////////////////////////////////////////////////////////////
 router.get("/login", (req,res,next)=> {
-  res.render("./auth-views/login-form.hbs")
+  res.render("./auth-views/login-form")
 });
 
 router.post("/process-login", (req, res, next) => {

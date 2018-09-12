@@ -21,6 +21,7 @@ body {
 .error-message {
   color: crimson; }
 
+<<<<<<< HEAD
   /* LAYOUT ------------------------------------------------------------------------- */
 a {
   color: #00B7FF;
@@ -31,24 +32,55 @@ nav a{
   text-decoration: none;
   padding-right: 2%;
 }
+=======
+  
+  header{
+    background-color: #e4dede;
+    height: 50px;
+    /* display: flex; */
+    /* align-items: center; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* text-align: center; */
+    display: inline;
+  }
+>>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
 
-header{
-  background-color: #e4dede;
-  height: 50px;
-  /* display: flex; */
-  /* align-items: center; */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  /* text-align: center; */
-  display: inline;
-}
+  nav{
+    padding: 1% 2%;
+  }
 
+<<<<<<< HEAD
 nav{
   padding: 1% 2%;
 }
 /* STONE LIST ----------------------------------------------------------------- */
+=======
+  nav a{
+    font-size: 16px;
+    color: gray;
+    text-decoration: none;
+    padding-right: 2%;
+  }
+
+  footer{
+    background-color: #e4dede;
+    font-size: 14px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  footer p{
+    padding: 2%;
+  }
+>>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
 
 .stone-img{
   width: 200px;
@@ -59,6 +91,7 @@ nav{
 .stone-container{
   display: flex;
   flex-wrap:wrap;
+  margin: 0 2.8%;
 }
 
 .stone-name{
@@ -78,7 +111,9 @@ li{
   color: white;
   background-position: center;
   background-size: cover;
+  margin: 2% 5%;
 }
+<<<<<<< HEAD
   /* Settings Pop-Up --------------------------------------------------------------------------------- */
 * {box-sizing: border-box;}
 
@@ -150,3 +185,53 @@ li{
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+=======
+
+.description-container{
+  border: 2px solid rgb(218, 198, 230);
+  width:700px;
+  height: 300px;
+  margin: 120px auto;
+  display: flex;
+  align-content: space-between;
+  background-color: rgba(250, 250, 250, 0.5);
+
+}
+
+.stone-description-title{
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  padding: 5%;
+  color: grey;
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.stone-description-img{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+
+}
+
+.description-img-container{
+
+  position: relative;
+}
+
+.description-info-container{
+  
+  width: 332px;
+  height: 280px;
+  position: relative;
+  top: 25%;
+  margin-top: -50px;
+  padding: 10px 3px;
+  margin-left: 48%;
+  font-size: 16px;
+  color: gray;
+  
+}
+>>>>>>> 743b084a9f1b086dde570030ede6e1d0c474c986
