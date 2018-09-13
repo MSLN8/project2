@@ -38,15 +38,13 @@ router.post("/process-login", (req, res, next) => {
  .then(userDoc => {
    if (!userDoc){
      req.flash("error", "Incorrect email :cœur_brisé::cœur_brisé::cœur_brisé:");
-     res.redirect("./auth-views/login-form.hbs");
-     return;
-     res.redirect("./login-form");
+     res.redirect("/login");
      return; // use "return instead of a big else {}"
    }
      const {encryptedPassword} = userDoc;
      if (!bcrypt.compareSync(originalPassword, encryptedPassword)) {
        req.flash("error", "Incorrect password :cœur_brisé::cœur_brisé::cœur_brisé:");
-       res.redirect("./auth-views/login-form.hbs");
+       res.redirect("/login");
        return;
      }
      req.logIn(userDoc, () => {
