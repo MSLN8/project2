@@ -1,7 +1,7 @@
 
 
 body {
-  padding: 50px;
+  //padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   background-color: beige;
@@ -242,20 +242,41 @@ li{
 
 //HOME PAGE NOT LOGGED IN
 
-.homepagelogoff {
-  display : flex;
-  flex-direction: column;
-  align-items: center;
-  border : black, solid, 8px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  color : #555;
-  font-style: bold;
-  font-size: 60px;
+.logoff-container {
+  text-align: center;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 190px;
+  background-image: url(../images/rhys-jenkins-603011-unsplash.jpg);
+  
 }
 
+.logoff-title{
+font-size: 120px;
+display: inline;
+
+}
+
+.homepagelogoff{
+  width: 100%;
+  margin-top: 50px;
+
+}
+
+//---SEARCH BAR---------------------------------------------//
+.searchbar-title{
+  font-size: 40px;
+  margin-bottom: 0;
+}
+#searchbar{
+  width: 100%
+}
+.champ{
+  width: 59%;
+  height: 50px;
+}
 
 
 //ADMIN CSS
@@ -294,3 +315,5 @@ button a {
   box-shadow: 1px 1px 1px grey;
   white-space: nowrap;
 }
+
+
