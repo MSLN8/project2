@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Stone = require("../models/stone-model.js");
+const User = require ("../models/user-model.js")
 require("dotenv").config()
+const bcrypt = require("bcrypt");
 
 
 //////////////////Connection to Mongoose////////////////////////////
@@ -54,3 +56,29 @@ Stone.create(stoneData)
   console.log("Stone Creation SUCCESS")
 })
 .catch(err => console.log("Stone Creation FAILED"));
+
+//////////////////ADMIN USER CREATION////////////////////////////
+
+const userData = [{
+fullName: "Jul",
+email: "jul@swag.com",
+image: "https://media.giphy.com/media/12uhzw7y9aB8v6/giphy.gif",
+// zodiac: { type: String, enum: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces']},
+location: "Heaven",
+// possession:[
+//     {
+//         type: Schema.Types.ObjectId,
+//         ref: "Stone"
+//     }
+// ],
+// googleID: String,
+
+encryptedPassword: bcrypt.hashSync("g0", 10),
+role: "admin",
+}];
+
+User.create(userData)
+.then( userResults => {
+  console.log("User Creation SUCCESS")
+})
+.catch(err => console.log("User Creation FAILED"));

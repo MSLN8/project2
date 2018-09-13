@@ -5,7 +5,7 @@ const Stone = require("../models/stone-model.js")
 
 
 ///////////////////////////////////ADMIN ROUTE//////////////////////////////////////////////////////////
-router.get("/admin/usersmanagement", (req,res,next) =>{
+router.get("/usersmanagement", (req,res,next) =>{
   if (!req.user || req.user.role !== "admin") {
     req.flash ("error", "Only admins can do that");
     res.redirect ("/");
@@ -22,7 +22,7 @@ router.get("/admin/usersmanagement", (req,res,next) =>{
 });
 
 //////////////////////////////////LISTE DES STONES////////////////////////////////////////////////////// 
-router.get("/admin/stonesmanagement", (req,res,next) =>{
+router.get("/stonesmanagement", (req,res,next) =>{
   if (!req.user || req.user.role !== "admin") {
     req.flash ("error", "Only admins can do that");
     res.redirect ("/");
@@ -33,7 +33,7 @@ Stone.find({ })
   .sort({role:1, createdAt: 1}) // use".sort()"" to order results
   .then(userResults => {
     res.locals.stoneArray = userResults;
-    res.render("./admin-views/stone-list.hbs");
+    res.render("./admin-views/stones-list.hbs");
   })
 .catch(err=>next(err));
 });

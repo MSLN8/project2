@@ -12,13 +12,12 @@
   <header>
     <nav>
       {{#if currentUser}}
-<<<<<<< HEAD:project2/views/layout.hbs
       <a href="/">Home</a>
       <b>{{currentUser.email}}</b>
       <a href="/profile">Profile</a>
        {{#if currentUser.isAdmin}}
-      <a href="/admin/users">User management</a>
-      <a href="/admin/users">Stone management</a>
+      <a href="/usersmanagement">User management</a>
+      <a href="/stonesmanagement">Stone management</a>
       {{/if}}
       <a href="/stone-list">Check our Stones</a>
       <a href="/logout">Log out</a>
@@ -27,21 +26,6 @@
       <a href="/login">Log in</a>
       {{/if}}
 
-=======
-     <a href="/">Home</a>
-     <b>{{currentUser.email}}</b>
-     <a href="/profile">Profile</a>
-      {{#if currentUser.isAdmin}}
-     <a href="/admin/users">User management</a>
-     <a href="/admin/users">Stone management</a>
-     {{/if}}
-     <a href="/stone-list">Check our Stones</a>
-     <a href="/logout">Log out</a>
-     {{else}}
-     <a href="/signup">Sign up</a>
-     <a href="/login">Log in</a>
-     {{/if}}
->>>>>>> 5cb658b4d780a281bde88b655ad7c5f73de75518:views/layout.hbs
     </nav>
   </header>
  {{!-- <h1>Welcome to {{title}} website</h1> --}}
