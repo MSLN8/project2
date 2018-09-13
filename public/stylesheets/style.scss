@@ -1,5 +1,4 @@
 *{
-
   font-family: 'Oswald', sans-serif;
 }
 
@@ -7,35 +6,46 @@ body {
   //padding: 50px;
   font-family: 'Oswald', sans-serif;
   margin: 0;
-  background-color: beige;
+  background-color: #F6F5FF;
   // background-position:50% 50%;
   // background-repeat: no-repeat;
   // background-size: cover; 
 }
 
   /* FLASH MESSAGES ---------------------------------------------------------*/
+.success-message {
+  color: #7DFFB1;
+  text-align : center; 
+  font-size: 20px;
+}
 
-  .success-message {
-    color: #7DFFB1;
-    text-align : center;
-    font-size: 20px;
-   }
-   
-   .error-message {
-    color: crimson;
-    text-align: center;
-    font-size: 20px; }
+.error-message {
+  color: crimson;
+  text-align: center;
+  font-size: 20px; }
 
   /* LAYOUT ------------------------------------------------------------------------- */
+nav{
+    padding: 1% 2%;
+}
+
+a {
+  color: #fff;
+}
 
 nav a{
   font-size: 16px;
-  color: white;
+  color: #fff;
   text-decoration: none;
   padding-right: 2%;
 }
+nav b{
+  font-size: 14px;
+  color: #fff;
+  padding-right: 2%;
+}
   
-  header{
+header{
     background-color:rgba(33,49,77,.8);
     height: 50px;
     position: fixed;
@@ -43,11 +53,17 @@ nav a{
     left: 0;
     width: 100%;
     display: inline;
+}
+
+
+/* STONE LIST ----------------------------------------------------------------- */
+  nav a{
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    padding-right: 2%;
   }
 
-  nav{
-    padding: 1% 2%;
-  }
   footer{
     background-color:rgba(33,49,77,.8);
     font-size: 14px;
@@ -58,6 +74,7 @@ nav a{
     bottom: 0;
     left: 0;
     width: 100%;
+    color: #fff;
   }
   
   footer p{
@@ -241,7 +258,17 @@ li{
   
 }
 
-.logoff-title{
+// h1 {
+//   font-size : 40px;
+// }
+
+h2 {
+  font-size: 20px;
+  font-style : italic;
+  text-align: center;
+}
+
+  .logoff-title{
 font-size: 120px;
 display: inline;
 
@@ -269,7 +296,6 @@ display: inline;
 
 //ADMIN CSS
 button{
-  background-color: plum;
   padding:6px 0 6px 0;
 	font:bold 13px Arial;
 	color:#555;
@@ -304,32 +330,31 @@ button a {
   white-space: nowrap;
 }
 
-//----PROFILE PART------------------------------------------------------
+//////////////////// login & sign up //////////////////////////:::
+.login{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.signup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+//PROFILE PART
 
 .profilepic {
   width: 20%;
   height: auto;
- }
+}
  .profiledata{
    display:flex;
  }
  .profilefields{
    font-size : 20px;
  }
-
- .login{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- }
-
- //---SIGN UP-------------------------------------------------------------------
- .signup{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- }
-
 
