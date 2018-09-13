@@ -80,6 +80,7 @@ app.use("/", profileRouter);
 const searchRouter = require("./routes/searchbar.js");
 app.use("/", searchRouter);
 
+
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 const adminRouter = require("./routes/admin-router.js")
 app.use("/", adminRouter);
