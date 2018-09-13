@@ -18,8 +18,7 @@ router.post("/process-signup", (req,res,next) => {
 
   User.create ({fullName, email, encryptedPassword, possession, zodiac, location})
   .then(userDoc => {
-    req.flash("success", "Sign up success !");
-    //req.flash("success", "Sign up success! 🖖🏾");
+    req.flash("success", "Sign up success! 🎉🎉🎉");
     res.redirect("/");
     })
   .catch(err => next(err));
@@ -38,7 +37,7 @@ router.post("/process-login", (req, res, next) => {
   User.findOne({email : {$eq:email}})
   .then(userDoc => {
     if (!userDoc){
-      req.flash("error", "Incorrect email");
+      req.flash("error", "Incorrect email 💔💔💔");
       res.redirect("./auth-views/login-form.hbs");
       return;
       res.redirect("./login-form");
@@ -46,12 +45,12 @@ router.post("/process-login", (req, res, next) => {
     }
       const {encryptedPassword} = userDoc;
       if (!bcrypt.compareSync(originalPassword, encryptedPassword)) {
-        req.flash("error", "Incorrect password");
+        req.flash("error", "Incorrect password 💔💔💔");
         res.redirect("./auth-views/login-form.hbs");
         return;
       }
       req.logIn(userDoc, () => {
-      req.flash("success", "Log in success!");
+      req.flash("success", "Congrats you're logged in! 🍾🍾🍾");
       res.redirect("/");
       })
            
@@ -63,7 +62,7 @@ router.post("/process-login", (req, res, next) => {
 ///////////ROUTE LOG OUT/////////////////////////////////////////////////////////////////////
     router.get("/logout", (req,res,next) => {
       req.logOut();
-      req.flash("success", "Logged out succesfully");
+      req.flash("success", "See you later! 👋👋👋");
       res.redirect("/");
     });
 
@@ -78,9 +77,9 @@ router.post("/process-login", (req, res, next) => {
     router.get("/google/user-info",
     passport.authenticate("google", {
     successRedirect : "/",
-    successFlash:"Google log in successful ! ",
+    successFlash:" Congrats you're logged in with Google 🍾🍾🍾 ",
     failureRedirect: "/login",
-    failureFlash: "Google log in failed !",
+    failureFlash: "Google log in failed! 😭😭😭",
     }));
 
 

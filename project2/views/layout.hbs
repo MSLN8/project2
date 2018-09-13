@@ -6,25 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav>
-      <a href="/">Home</a>
       {{#if currentUser}}
+      <a href="/">Home</a>
       <b>{{currentUser.email}}</b>
-      <a href="/profile">My profile</a>
-      <a href="/logout">Log out</a>
+      <a href="/profile">Profile</a>
        {{#if currentUser.isAdmin}}
-      <h3>Admin zone</h3>
       <a href="/admin/users">User management</a>
-       <a href="/admin/users">Stone management</a>
+      <a href="/admin/users">Stone management</a>
       {{/if}}
+      <a href="/stone-list">Check our Stones</a>
+      <a href="/logout">Log out</a>
       {{else}}
       <a href="/signup">Sign up</a>
       <a href="/login">Log in</a>
       {{/if}}
-  <a href="/stone-list">Check our Stones</a>
+
     </nav>
   </header>
  {{!-- <h1>Welcome to {{title}} website</h1> --}}

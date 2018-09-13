@@ -3,11 +3,12 @@
 {{#if currentUser}}
 <div class= "content">
 <div class="sayHi">
-<h2>Hello, {{currentUser.fullName}} ! </h2>
+<h2>Hello, {{currentUser.fullName}}! </h2>
 </div>
 
 <div id="searchbar">  
-    <h3>Search for a stone</h3>
+    <h3> 🔎 What are you looking for? </h3>
+    <h2> (Type a specific stone, a property you need or your zodiac sign for matching! </h2>
     <form action="/search" class="formulaire" method="POST">
     <input class="champ" type="text" name="field" placeholder="Amethyst..."/>
     <br/>
@@ -20,10 +21,10 @@
 {{/if}}
     
 
-
 {{else}}
 <div class ="homepagelogoff">
-<p> Welcome to our website ! </p>
+<h1> Welcome to our website! </h1>
+<h2> Discover how to heal yourself with stones</h2>
 <button class ="buttonsHP"><a href="/signup"> Create your account !</a></button>
 <button><a href="/google/login"> Sign up with Google</a></button>
 {{/if}}
