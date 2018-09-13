@@ -1,4 +1,4 @@
-<div class"title-section">
+<div class="title-section">
 <h2>Your profile</h2>
 </div>
 
@@ -15,19 +15,9 @@
 </div>
 </div>
 
-<h3>Your stone collection</h3>
-<ul>
- {{#each possessionArray}}
-   <li>
-     <img src="{{this.image}}" alt="">
-     <p>{{this.name}}</p>
-   </li>
- {{/each}}
-</ul>
 
 
-
-
+<div class="edit">
 {{!-- Settings --}}
 <button class="open-button" onclick="openForm()">Edit your profile</button>
 <div class="form-popup" id="myForm">
@@ -70,3 +60,17 @@ function closeForm() {
    document.getElementById("myForm").style.display = "none";
 }
 </script>
+</div>
+<div class="title-sectionstone">
+<h3>Your stone collection</h3>
+</div>
+<div >
+<ul class= "stone-container">
+ {{#each possessionArray}}
+   <li>
+     <img class="stone-img" src="{{this.image}}" alt="">
+     <p class="stone-name">{{this.name}}</p>
+   </li>
+ {{/each}}
+</ul>
+</div>

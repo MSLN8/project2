@@ -1,7 +1,7 @@
+require("dotenv").config()
 const mongoose = require("mongoose");
 const Stone = require("../models/stone-model.js");
 const User = require ("../models/user-model.js")
-require("dotenv").config()
 const bcrypt = require("bcrypt");
 
 

@@ -92,8 +92,10 @@ header{
 
 .stone-container{
   display: flex;
+  justify-content: center;
   flex-wrap:wrap;
-  margin: 0 2.8%;
+  margin: 0 auto;
+  
 }
 
 .stone-name{
@@ -108,18 +110,21 @@ li{
   text-align: center;
   font-size: 60px;
   background-image: url(../images/fond2-eau.jpg);
-  margin: 0;
+  margin-top: 50px;
   padding: 5%;
   color: white;
   background-position: center;
   background-size: cover;
-  margin: 2% 5%;
+  // margin: 2% 5%;
 }
   /* Settings Pop-Up --------------------------------------------------------------------------------- */
 * {box-sizing: border-box;}
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
+  width: 15%;
+  height: 5%;
+  margin-left: 5%;
   background-color: #555;
   color: white;
   padding: 16px 20px;
@@ -127,17 +132,15 @@ li{
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
+  width: 203px;
 }
 
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: fixed;
-  bottom: 0;
-  right: 15px;
+  bottom: 287px;
+  left: 48px;
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
@@ -277,7 +280,7 @@ display: inline;
 // }
 
 h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-style : italic;
   text-align: center;
 }
@@ -362,8 +365,9 @@ button a {
 //PROFILE PART
 
 .profilepic {
-  width: 20%;
-  height: auto;
+  width: 15%;
+  height: 15%;
+  margin-left: 5%
 }
  .profiledata{
    display:flex;
@@ -372,3 +376,18 @@ button a {
    font-size : 20px;
  }
 
+ .title-section {
+   margin-top : 60px;
+ }
+
+ .title-sectionstone{
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+ }
+
+
+/* edit */
+.edit {
+  
+}
