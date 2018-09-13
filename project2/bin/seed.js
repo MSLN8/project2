@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 const Stone = require("../models/stone-model.js");
+require("dotenv").config()
 
 
 //////////////////Connection to Mongoose////////////////////////////
 mongoose
-  .connect('mongodb://localhost/project2', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

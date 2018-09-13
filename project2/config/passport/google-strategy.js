@@ -4,8 +4,8 @@ const GoogleStrategy = require ("passport-google-oauth").OAuth2Strategy
 
 
 passport.use(new GoogleStrategy ({
-    clientID:"785366078311-283uieecaea2o9670gtr8n0b2k0usuq2.apps.googleusercontent.com",
-    clientSecret:"HF3jQLzfO92cXjAikVcf68Fo",
+    clientID:process.env.googleClientId ,
+    clientSecret:process.env.googleClientSecret,
     callbackURL:"/google/user-info",
     proxy:true,
   }, (accessToken, refreshToken, userInfo, done) => {
