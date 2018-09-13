@@ -1,24 +1,28 @@
+<div class"title-section">
+<h2>Your profile</h2>
+</div>
 
-
-<h2>My profile</h2>
+<div class = "profiledata">
+<img class="profilepic" src="{{currentUser.image}}" alt="">
 <ul>
-<li>{{currentUser.email}}</li>
-<li>{{currentUser.fullName}}</>
-<img src="{{currentUser.image}}" alt="">
-<li>{{currentUser.zodiac}}</li>
-<li>{{currentUser.location}}</li>
+<div class= "profilefields">
+<li> <b>Name:</b> {{currentUser.fullName}}</>
+<li> <b>E-mail:</b> {{currentUser.email}}</li>
+<li> <b>Zodiac Sign:</b> {{currentUser.zodiac}}</li>
+<li> <b>Current location</b>: {{currentUser.location}}</li>
 <li>{{currentUser.timestamps}}</li>
 </ul>
+</div>
+</div>
 
-
-<h3>My stone collection</h3>
+<h3>Your stone collection</h3>
 <ul>
-  {{#each possessionArray}}
-    <li>
-      <img src="{{this.image}}" alt="">
-      <p>{{this.name}}</p>
-    </li>
-  {{/each}}
+ {{#each possessionArray}}
+   <li>
+     <img src="{{this.image}}" alt="">
+     <p>{{this.name}}</p>
+   </li>
+ {{/each}}
 </ul>
 
 
@@ -29,28 +33,28 @@
 <div class="form-popup" id="myForm">
 <form action="/process-profile" class="form-container" method="POST">
 <label>
-   Change your name:
-  <input type="text" name="fullName" value="{{currentUser.fullName}}" placeholder="Change your name here"/>
+  Change your name:
+ <input type="text" name="fullName" value="{{currentUser.fullName}}" placeholder="Change your name here"/>
 </label>
 <br/>
 
+<label>
+   Email :
+   <input type="email" name="email" value="{{currentUser.email}}" placeholder = "Change your email here"/>
+ </label>
+ <br>
+
+ {{!-- <label>
+   Zodiac Sign
+   <input type="zodiac-sign" name="zodiac" value="{{currentUser.zodiac}}" placeholder = "Change your Zodiac Sign here"/>
+ </label>
+ <br> --}}
+
  <label>
-    Email :
-    <input type="email" name="email" value="{{currentUser.email}}" placeholder = "Change your email here"/>
-  </label>
-  <br>
-
-  {{!-- <label>
-    Zodiac Sign
-    <input type="zodiac-sign" name="zodiac" value="{{currentUser.zodiac}}" placeholder = "Change your Zodiac Sign here"/>
-  </label>
-  <br> --}}
-
-  <label>
-    Location
-    <input type="location" name="location" value="{{currentUser.location}}" placeholder = "Change your location here"/>
-  </label>
-  <br>
+   Location
+   <input type="location" name="location" value="{{currentUser.location}}" placeholder = "Change your location here"/>
+ </label>
+ <br>
 
 <button type="submit" class="btn">Save</button>
 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
@@ -59,10 +63,10 @@
 
 <script>
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
+   document.getElementById("myForm").style.display = "block";
 }
 
 function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+   document.getElementById("myForm").style.display = "none";
 }
 </script>
