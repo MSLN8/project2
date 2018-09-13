@@ -1,0 +1,14 @@
+<h3>Stone List</h3>
+
+<ul>
+  {{#each stoneArray}}
+  <li>
+    <h4>{{this.name}}</h4>
+   
+      <li>Registered: {{this.createdAt}}</li>
+      <li>Power : {{this.power}}</li>
+      <li>{{this.image}}</li>
+    </ul>
+  </li>
+  {{/each}}
+</ul>
