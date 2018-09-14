@@ -4,13 +4,13 @@
   {{#each stoneArray}}
   <li class="oneStone-container">
       <h1 class="stone-name">{{this.name}}</h1>
-      <p>Registered: {{this.createdAt}}</p>
+      {{!-- <p>Registered: {{this.createdAt}}</p> --}}
       {{!-- <p>Power : {{this.power}}</p> --}}
       <img class="stone-img" src="{{this.image}}" alt="">
       <br>
-      <form action="/stonesmanagement/{{this._id}}/delete" method="GET">
+      <center><form action="/stonesmanagement/{{this._id}}/delete" method="GET">
         <button>Delete</button>
-    </form>
+    </form></center>
   </li>
   {{/each}}
 </ul>
