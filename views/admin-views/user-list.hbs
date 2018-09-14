@@ -1,4 +1,4 @@
-<h3>User List</h3>
+<h3 class="stone-list-title">User management</h3>
 
 <ul>
   {{#each userArray}}
@@ -9,7 +9,10 @@
       <li>Registered: {{this.createdAt}}</li>
       <li>Zodiac Sign: {{this.zodiac}}</li>
       <li>Location: {{this.location}}</li>
-      <li>{{this.avatar}}</li>
+      <li><img src="{{this.image}}" alt=""></li>
+      <form action="/usersmanagement/{{this._id}}/delete" method="GET">
+        <button>Delete</button>
+    </form>
     </ul>
   </li>
   {{/each}}

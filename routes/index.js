@@ -52,7 +52,7 @@ router.post("/process-settings",(req,res,next) => {
 
   .then (userDoc => {
     req.flash("success", "settings saved!");
-    res.redirect("/");
+    res.redirect("/profile");
   })
   .catch (err => next(err));
 });

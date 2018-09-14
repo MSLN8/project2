@@ -11,8 +11,8 @@
 <body>
   <header>
     <nav>
+       <a href="/">Home</a>
       {{#if currentUser}}
-      <a href="/">Home</a>
       <b>{{currentUser.email}}</b>
       <a href="/profile">Profile</a>
        {{#if currentUser.isAdmin}}

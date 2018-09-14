@@ -1,11 +1,17 @@
-<h3> 🎁 Look what we've got for you : </h3>
-  
+<h3 class="h3results"> 🎁 Look what we've got for you : </h3>
+
+ 
+  <ul class="stone-container">
 {{#each stoneResult}}
-  <h1>{{this.name}}</h1>
+    <li class="oneresult">
+  <h1 class="stone-name">{{this.name}}</h1>
 
-  <img src="{{this.image}}" alt=""/>
+  <img class="stone-img" src="{{this.image}}" alt=""/>
+  <center><form action="stone-description/{{this._id}}" method="">
+                <button>Description</button>
+  </form></center>
 
-  <p>{{this.power}}</p>
-  <p>{{this.forWho}}</p>
-
+</li>
 {{/each}}
+  </ul>
+

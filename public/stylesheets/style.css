@@ -6,20 +6,23 @@ body {
   margin: 0;
   background-color: #F6F5FF;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-bottom: 100px; }
 
 /* FLASH MESSAGES ---------------------------------------------------------*/
 .success-message {
   margin-top: 50px;
   color: #7DFFB1;
-  text-align: center;
-  font-size: 20px; }
+  font-size: 20px;
+  position: fixed;
+  margin-left: 43%; }
 
 .error-message {
   margin-top: 50px;
   color: crimson;
-  text-align: center;
-  font-size: 20px; }
+  font-size: 20px;
+  position: fixed;
+  margin-left: 43%; }
 
 /* LAYOUT ------------------------------------------------------------------------- */
 nav {
@@ -105,24 +108,24 @@ li {
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-  width: 15%;
-  height: 5%;
-  margin-left: 5%;
+  /* width: 15%; */
+  height: 3%;
+  margin-left: 2%;
   background-color: #555;
   color: white;
-  padding: 16px 20px;
+  padding: 6px 14px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  position: fixed;
-  width: 203px; }
+  /* position: fixed; */
+  width: 143px; }
 
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: fixed;
-  bottom: 432px;
-  left: 839px;
+  bottom: 150px;
+  left: 875px;
   border: 3px solid #f1f1f1;
   z-index: 9; }
 
@@ -240,6 +243,9 @@ li {
   font-size: 120px;
   display: inline; }
 
+.discover-title {
+  margin-top: 0; }
+
 .homepagelogoff {
   width: 100%;
   margin-top: AUTO; }
@@ -281,13 +287,13 @@ h2 {
   box-shadow: 1px 1px 3px #201549; }
 
 button {
-  padding: 13px 0 10px 0;
+  padding: 12px 0 10px 0;
   font: bold 13px;
   color: #201549;
-  border-radius: 16px;
-  width: 95px;
+  border-radius: 12px;
+  width: 91px;
   border: 1px solid #ccc;
-  box-shadow: 1px 1px 3px #be1657;
+  box-shadow: 1px 1px 3px #111111;
   margin: 0 2px;
   text-decoration: none;
   cursor: pointer; }
@@ -324,33 +330,42 @@ button a {
   transform: translate(-50%, -50%); }
 
 .profilepic {
-  width: 250px;
   height: 222px;
-  position: absolute;
-  margin: -41px -16%;
-  left: 31%; }
+  float: left;
+  width: 40%;
+  margin-right: 11px; }
+
+.profilepic img {
+  width: 200px;
+  /* background-position: center; */
+  margin-left: 45%; }
 
 .profiledata {
-  margin-right: 25%; }
+  width: 100%; }
 
 .profilefields {
   font-size: 20px; }
 
-.oneStone-container {
-  border: 2px solid blue;
-  text-align: center;
-  margin-right: 45px;
-  width: 44%; }
 .title-sectionstone {
   font-size: 20px;
   font-style: italic;
-  text-align: center;
-  margin-top: 10%; }
-
-.title-section {
-  margin-bottom: 6%; }
+  text-align: center; }
 
 .userData {
-  margin-left: 50%; }
+  margin-left: 20%; }
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-right: 45px;
+  width: 44%; }
+
+.h3results {
+  margin-top: 5%;
+  font-size: 28px; }
+
+.user-listH3 {
+  margin-top: 50px; }
 
 /*# sourceMappingURL=style.css.map */

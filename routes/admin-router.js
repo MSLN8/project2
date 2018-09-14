@@ -43,8 +43,18 @@ Stone.find({ })
 router.get('/stonesmanagement/:id/delete', (req, res, next) => {
   const {id} = req.params;
   Stone.findByIdAndRemove(id)
-  .then(celebrityResults => {
+  .then(stoneDeleteResults => {
       res.redirect(`/stonesmanagement`);
+  })
+  .catch(err => next(err));
+});
+
+//////////////////////////////////DELETE A USER////////////////////////////////////////////////////// 
+router.get('/usersmanagement/:id/delete', (req, res, next) => {
+  const {id} = req.params;
+  User.findByIdAndRemove(id)
+  .then(userDeleteResults => {
+      res.redirect(`/usersmanagement`);
   })
   .catch(err => next(err));
 });
