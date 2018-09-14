@@ -1,10 +1,11 @@
-require("dotenv").config()
+
 const mongoose = require("mongoose");
 const Stone = require("../models/stone-model.js");
 const User = require ("../models/user-model.js")
 const bcrypt = require("bcrypt");
 
 
+//process.env.MONGODB_URI
 //////////////////Connection to Mongoose////////////////////////////
 mongoose
   .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
