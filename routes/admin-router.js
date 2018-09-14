@@ -38,4 +38,15 @@ Stone.find({ })
 .catch(err=>next(err));
 });
 
+//////////////////////////////////DELETE A STONE////////////////////////////////////////////////////// 
+
+router.get('/stonesmanagement/:id/delete', (req, res, next) => {
+  const {id} = req.params;
+  Stone.findByIdAndRemove(id)
+  .then(celebrityResults => {
+      res.redirect(`/stonesmanagement`);
+  })
+  .catch(err => next(err));
+});
+
 module.exports = router;

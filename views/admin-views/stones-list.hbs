@@ -1,14 +1,16 @@
-<h3>Stone List</h3>
+<h3 class="stone-list-title">Stone List</h3>
 
-<ul>
+<ul class="stone-container">
   {{#each stoneArray}}
-  <li>
-    <h4>{{this.name}}</h4>
-   
-      <li>Registered: {{this.createdAt}}</li>
-      <li>Power : {{this.power}}</li>
-      <li>{{this.image}}</li>
-    </ul>
+  <li class="oneStone-container">
+      <h1 class="stone-name">{{this.name}}</h1>
+      <p>Registered: {{this.createdAt}}</p>
+      {{!-- <p>Power : {{this.power}}</p> --}}
+      <img class="stone-img" src="{{this.image}}" alt="">
+      <br>
+      <form action="/stonesmanagement/{{this._id}}/delete" method="GET">
+        <button>Delete</button>
+    </form>
   </li>
   {{/each}}
 </ul>

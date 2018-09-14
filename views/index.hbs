@@ -1,34 +1,37 @@
 
 
 {{>flash_messages}}
+<div class="login-container">
 
-{{#if currentUser}}
-<div class= "content"> 
+    {{#if currentUser}}
+        <div class="sayHi">
+            <h2 class="sayHello-title">Hello, {{currentUser.fullName}} !</h2>
+        </div>
+    <div class= "login-content"> 
 
-    <div class="sayHi">
-        <h2>Hello, {{currentUser.fullName}} !</h2>
+    {{!-- HOME PAGE WHEN LOGGED IN --}}
+
+
+        <div id="searchbar">  
+            <h3 class ="searchbar-title">🔎 What are you looking for ?</h3>
+            <form action="/search" class="formulaire" method="POST">
+            <input class="champ" type="text" name="field" placeholder="Amethyst..."/>
+            <br/>
+            <br/>
+
+            <button class="searchbar-bouton" type="submit">Search</button>             
+            </form>
+        </div>
+        <br/>
     </div>
 </div>
-
-    <div id="searchbar">  
-        <h3 class ="searchbar-title">🔎 What are you looking for ?</h3>
-        <h2>Discover how to heal yourself with stones</h2>
-        <form action="/search" class="formulaire" method="POST">
-        <input class="champ" type="text" name="field" placeholder="Amethyst..."/>
-        <br/>
-        <br/>
-
-        <button class="searchbar-bouton" type="submit">Search</button>             
-        </form>
-    </div>
-    <br/>
 
 {{#if errorMessage}}
 <p> {{errorMessage}} </p>
 {{/if}}
     
 
-
+{{!-- HOME PAGE WHEN LOGGED OUT --}}
 {{else}}
 <div class = "logoff-container">
     <div class ="homepagelogoff">
@@ -37,6 +40,7 @@
         <br>
         <br>
         <h1 class="logoff-title"> Stone power </h1>
+        <h2>Discover how to heal yourself with stones</h2>
         <br>
         <button class ="buttonsHP"><a href="/signup"> Create your account !</a></button>
         <button><a href="/google/login"> Sign up with Google</a></button>
