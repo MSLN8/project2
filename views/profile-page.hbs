@@ -1,76 +1,75 @@
 <div class="title-section">
-<h2>Your profile</h2>
+  <h2>Your profile</h2>
 </div>
 
 <div class = "profiledata">
-<img class="profilepic" src="{{currentUser.image}}" alt="">
-<ul>
-<div class= "profilefields">
-<li> <b>Name:</b> {{currentUser.fullName}}</>
-<li> <b>E-mail:</b> {{currentUser.email}}</li>
-<li> <b>Zodiac Sign:</b> {{currentUser.zodiac}}</li>
-<li> <b>Current location</b>: {{currentUser.location}}</li>
-<li>{{currentUser.timestamps}}</li>
-</ul>
-</div>
-</div>
+  <div class = "userData">
+  <img class="profilepic" src="{{currentUser.image}}" alt="">
+    <ul>
+    <div class= "profilefields">
+      <li> <b>Name:</b> {{currentUser.fullName}}</>
+      <li> <b>E-mail:</b> {{currentUser.email}}</li>
+      <li> <b>Zodiac Sign:</b> {{currentUser.zodiac}}</li>
+      <li> <b>Current location</b>: {{currentUser.location}}</li>
+      <li>{{currentUser.timestamps}}</li>
+    </div>
+    </ul>
+  
+  {{!-- Settings --}}
+  <button class="open-button" onclick="openForm()">Edit your profile</button>
+    <div class="form-popup" id="myForm">
+      <form action="/process-profile" class="form-container" method="POST">
+        <label>
+        Change your name:
+        <input type="text" name="fullName" value="{{currentUser.fullName}}" placeholder="Change your name here"/>
+        </label>
+        <br/>
 
+        <label>
+        Email :
+        <input type="email" name="email" value="{{currentUser.email}}" placeholder = "Change your email here"/>
+        </label>
+        <br>
+    {{!-- <label>
+      Zodiac Sign
+      <input type="zodiac-sign" name="zodiac" value="{{currentUser.zodiac}}" placeholder = "Change your Zodiac Sign here"/>
+    </label>
+    <br> --}}
 
+        <label>
+        Location
+        <input type="location" name="location" value="{{currentUser.location}}" placeholder = "Change your location here"/>
+        </label>
+        <br>
+        <button type="submit" class="btn">Save</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+      
+        <script>
+          function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+          function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        </script>
+      </div>
+    </div>
+  </div> 
 
-<div class="edit">
-{{!-- Settings --}}
-<button class="open-button" onclick="openForm()">Edit your profile</button>
-<div class="form-popup" id="myForm">
-<form action="/process-profile" class="form-container" method="POST">
-<label>
-  Change your name:
- <input type="text" name="fullName" value="{{currentUser.fullName}}" placeholder="Change your name here"/>
-</label>
-<br/>
+  {{!-- Stone collection --}}
+  <div class="title-sectionstone">
+    <h3>Your stone collection</h3>
+  </div>
 
-<label>
-   Email :
-   <input type="email" name="email" value="{{currentUser.email}}" placeholder = "Change your email here"/>
- </label>
- <br>
-
- {{!-- <label>
-   Zodiac Sign
-   <input type="zodiac-sign" name="zodiac" value="{{currentUser.zodiac}}" placeholder = "Change your Zodiac Sign here"/>
- </label>
- <br> --}}
-
- <label>
-   Location
-   <input type="location" name="location" value="{{currentUser.location}}" placeholder = "Change your location here"/>
- </label>
- <br>
-
-<button type="submit" class="btn">Save</button>
-<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-</form>
-</div>
-
-<script>
-function openForm() {
-   document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-   document.getElementById("myForm").style.display = "none";
-}
-</script>
-</div>
-<div class="title-sectionstone">
-<h3>Your stone collection</h3>
-</div>
-<div >
-<ul class= "stone-container">
- {{#each possessionArray}}
-   <li>
-     <img class="stone-img" src="{{this.image}}" alt="">
-     <p class="stone-name">{{this.name}}</p>
-   </li>
- {{/each}}
-</ul>
+  <div >
+    <ul class= "stone-container">
+      {{#each possessionArray}}
+        <li>
+          <img class="stone-img" src="{{this.image}}" alt="">
+          <p class="stone-name">{{this.name}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>
