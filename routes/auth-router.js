@@ -18,7 +18,7 @@ router.post("/process-signup", (req,res,next) => {
 
  User.create ({fullName, email, encryptedPassword, possession, zodiac, location})
  .then(userDoc => {
-   req.flash("success", "Sign up success! :tada::tada::tada:");
+   req.flash("success", "Sign up success! 🎉🎉🎉");
    res.redirect("/");
    })
  .catch(err => next(err));
@@ -37,18 +37,18 @@ router.post("/process-login", (req, res, next) => {
  User.findOne({email : {$eq:email}})
  .then(userDoc => {
    if (!userDoc){
-     req.flash("error", "Incorrect email :cœur_brisé::cœur_brisé::cœur_brisé:");
+     req.flash("error", "Incorrect email 💔💔💔");
      res.redirect("/login");
      return; // use "return instead of a big else {}"
    }
      const {encryptedPassword} = userDoc;
      if (!bcrypt.compareSync(originalPassword, encryptedPassword)) {
-       req.flash("error", "Incorrect password :cœur_brisé::cœur_brisé::cœur_brisé:");
+       req.flash("error", "Incorrect password 💔💔💔");
        res.redirect("/login");
        return;
      }
      req.logIn(userDoc, () => {
-     req.flash("success", "Congrats you're logged in! :champagne::champagne::champagne:");
+     req.flash("success", "Congrats you're logged in! 🍾🍾🍾");
      res.redirect("/");
      })
 
@@ -60,7 +60,7 @@ router.post("/process-login", (req, res, next) => {
 ///////////ROUTE LOG OUT/////////////////////////////////////////////////////////////////////
    router.get("/logout", (req,res,next) => {
      req.logOut();
-     req.flash("success", "See you later! :salut_main::salut_main::salut_main:");
+     req.flash("success", "See you later! 👋👋👋");
      res.redirect("/");
    });
 
@@ -75,9 +75,9 @@ router.post("/process-login", (req, res, next) => {
    router.get("/google/user-info",
    passport.authenticate("google", {
    successRedirect : "/",
-   successFlash:" Congrats you're logged in with Google :champagne::champagne::champagne: ",
+   successFlash:" Congrats you're logged in with Google 🍾🍾🍾",
    failureRedirect: "/login",
-   failureFlash: "Google log in failed! :sanglot::sanglot::sanglot:",
+   failureFlash: "Google log in failed! 😭😭😭",
    }));
 
 
