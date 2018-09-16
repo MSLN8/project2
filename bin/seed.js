@@ -86,11 +86,11 @@ Stone.create(stoneData)
 //////////////////ADMIN USER CREATION////////////////////////////
 
 const userData = [{
-fullName: "Jul",
-email: "jul@swag.com",
-image: "https://bit.ly/2CUVU90",
-// zodiac: { type: String, enum: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces']},
-location: "Heaven",
+fullName: "Admin",
+email: "admin@mail.com",
+image: "../public/images/admin.png",
+zodiac: 'Taurus',
+location: "Paris",
 // possession:[
 //     {
 //         type: Schema.Types.ObjectId,
