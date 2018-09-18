@@ -6,7 +6,7 @@ const GoogleStrategy = require ("passport-google-oauth").OAuth2Strategy
 passport.use(new GoogleStrategy ({
     clientID:process.env.googleClientId ,
     clientSecret:process.env.googleClientSecret,
-    callbackURL:"/google/login",
+    callbackURL:"/google/user-info",
     proxy:true,
   }, (accessToken, refreshToken, userInfo, done) => {
       console.log("GOOGLE user info ------------------", userInfo);

@@ -69,9 +69,10 @@ router.post("/process-login", (req, res, next) => {
      scope: [
        "https://www.googleapis.com/auth/plus.login",
        "https://www.googleapis.com/auth/plus.profile.emails.read",
-       ]
-   }));
-
+      ]
+    }));
+    
+    console.log("blah"),
    router.get("/google/user-info",
    passport.authenticate("google", {
    successRedirect : "/",
